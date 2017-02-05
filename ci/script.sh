@@ -13,8 +13,10 @@ main() {
     cross test --target $TARGET
     cross test --target $TARGET --release
 
-    echo 'Foobar' | cross run --target $TARGET
-    echo 'Foobar' | cross run --target $TARGET --release
+    # We can't use 'cross run' because we need to pass a string to the binary
+    # on stdin.  Just run the output manually.
+    echo 'Foobar' | ./target/$TARGET/debug/emoji256
+    echo 'Foobar' | ./target/$TARGET/release/emoji256
 }
 
 # we don't run the "test phase" when doing deploys
