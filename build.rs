@@ -22,7 +22,7 @@ static ALPHABET: &'static [&'static str] = &[
     "HEAVY MINUS SIGN",                             "HEAVY DIVISION SIGN",
     "HEAVY CHECK MARK",                             "HEAVY EXCLAMATION MARK SYMBOL",
     "BLACK QUESTION MARK ORNAMENT",                 "EXCLAMATION QUESTION MARK",
-    "DOUBLE EXCLAMATION MARK",                      "HUNDRED POINTS SYMBOL",
+    "CROSSED FLAGS",                                "HUNDRED POINTS SYMBOL",
     "KISS MARK",                                    "RING",
     "GEM STONE",                                    "HEAVY BLACK HEART",
 
@@ -130,13 +130,17 @@ static ALPHABET: &'static [&'static str] = &[
     "SYRINGE",                                      "BELL",
     "MICROSCOPE",                                   "CANDLE",
     "BLACK LEFT-POINTING TRIANGLE",                 "BLACK RIGHT-POINTING TRIANGLE",
-    "LEFTWARDS BLACK ARROW",                        "RIGHTWARDS BLACK ARROW",
-    "UPWARDS BLACK ARROW",                          "DOWNWARDS BLACK ARROW",
-    "NORTH EAST ARROW",                             "NORTH WEST ARROW",
+    "LEFTWARDS BLACK ARROW",                        "UPWARDS BLACK ARROW",
+    "DOWNWARDS BLACK ARROW",                        "NORTH EAST ARROW",
+    "NORTH WEST ARROW",                             "SOUTH EAST ARROW",
+
+    // NOTE: we explicitly don't have "BLACK RIGHTWARDS ARROW" or "RIGHTWARDS BLACK ARROW" (yes,
+    // they're different) in the above list, due to the following problem:
+    //  http://xahlee.info/comp/unicode_BLACK_RIGHTWARDS_problem.html
 
     // 224 - 255
-    "SOUTH EAST ARROW",                             "SOUTH WEST ARROW",
-    "LEFTWARDS ARROW WITH HOOK",                    "RIGHTWARDS ARROW WITH HOOK",
+    "SOUTH WEST ARROW",                             "LEFTWARDS ARROW WITH HOOK",
+    "RIGHTWARDS ARROW WITH HOOK",                   "ANTICLOCKWISE DOWNWARDS AND UPWARDS OPEN CIRCLE ARROWS",
     "BLACK RIGHT-POINTING DOUBLE TRIANGLE",         "BLACK LEFT-POINTING DOUBLE TRIANGLE",
     "BLACK UP-POINTING DOUBLE TRIANGLE",            "BLACK DOWN-POINTING DOUBLE TRIANGLE",
     "DOUBLE VERTICAL BAR",                          "SPARKLES",
