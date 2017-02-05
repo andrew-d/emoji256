@@ -30,4 +30,5 @@ fn main() {
 
         stdout_handle.write(&*emoji).unwrap();
     }
+    stdout_handle.write("\n".as_bytes()).unwrap();
 }
