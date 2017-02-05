@@ -1,6 +1,6 @@
 [root]
 name = "emoji256"
-version = "0.1.0"
+version = "0.0.2"
 dependencies = [
  "itertools 0.5.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode_names 0.1.7 (git+https://github.com/antifuchs/unicode_names.git?rev=ef5e0676ef93019baf70856dc43583e3e766f8cc)",
