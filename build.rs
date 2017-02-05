@@ -1,9 +1,12 @@
 extern crate unicode_names;
+extern crate itertools;
 
 use std::env;
 use std::fs::File;
 use std::io::Write;
 use std::path::Path;
+
+use itertools::Itertools;
 
 
 // This is the list of emoji names in our alphabet.
@@ -165,11 +168,22 @@ fn main() {
     let dest_path = Path::new(&out_dir).join("table.rs");
     let mut f = File::create(&dest_path).expect("couldn't create file");
 
-    write!(f, "static LOOKUP_TABLE: &'static [char] = &[\n").unwrap();
+    write!(f, "static LOOKUP_TABLE: &'static [&'static [u8]] = &[\n").unwrap();
 
     for name in ALPHABET.iter() {
         if let Some(ch) = unicode_names::character(name) {
-            write!(f, "  '{}',\n", ch).unwrap();
+            let mut buf = [0; 4];
+            let bytes = {
+                let s = ch.encode_utf8(&mut buf);
+                s.len()
+            };
+
+            let hex = &buf[0..bytes]
+                .iter()
+                .map(|b| format!("0x{:2X}", b))
+                .join(", ");
+
+            write!(f, "  &[{}],\n", hex).unwrap();
         } else {
             panic!("could not get Unicode character for name: {}", name);
         }
