@@ -13,7 +13,7 @@ main() {
     cross test --target $TARGET
     cross test --target $TARGET --release
 
-    tree target
+    find target -type f
 
     # We can't use 'cross run' because we need to pass a string to the binary
     # on stdin.  Just run the output manually.
