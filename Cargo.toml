@@ -1,0 +1,8 @@
+[package]
+name = "emoji256"
+version = "0.1.0"
+authors = ["Andrew Dunham <andrew@du.nham.ca>"]
+build = "build.rs"
+
+[build-dependencies]
+unicode_names = { git = "https://github.com/antifuchs/unicode_names.git", rev = "ef5e0676ef93019baf70856dc43583e3e766f8cc" }
