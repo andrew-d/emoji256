@@ -5,5 +5,5 @@ authors = ["Andrew Dunham <andrew@du.nham.ca>"]
 build = "build.rs"
 
 [build-dependencies]
-itertools = "0.5"
+itertools = "0.7"
 unicode_names = { git = "https://github.com/andrew-d/unicode_names.git", rev = "099ddd5fd37f7ff0e45c4ea47d49c2ba2d03ec3b" }
